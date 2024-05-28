@@ -6,7 +6,7 @@ from authorization.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['username', 'email', 'first_name', 'last_name', 'role', 'latitude', 'longitude']
+        fields = ['username', 'email', 'first_name', 'last_name', 'latitude', 'longitude']
 
 
 class RegistrationSerializer(serializers.ModelSerializer):
@@ -14,4 +14,4 @@ class RegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['username', 'password']
+        fields = ['username', 'password', 'latitude', 'longitude']

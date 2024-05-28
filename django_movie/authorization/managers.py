@@ -8,14 +8,11 @@ class UserManager(BaseUserManager):
         user.set_password(password)
         user.role = role
         user.save(using=self._db)
-
         return user
 
     def create_superuser(self, username, password):
         user = self.create_user(username=username, password=password, role=1)
         user.is_superuser = True
         user.is_staff = True
-
         user.save(using=self._db)
-
         return user
